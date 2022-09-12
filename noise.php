@@ -1,6 +1,6 @@
 <?php
-# надо найти функцию которая
-# убирает символы
+# создать массив с запрещеными симболами
+# убрать символы
 # и вернуть текст
 
 
@@ -14,7 +14,13 @@ For example:
 removeNoise("h%e&·%$·llo w&%or&$l·$%d")
 // returns hello world
 */
+function removeNoise($str){
+	     $vowel = ["/","[","%","$","&","/","#","·","@","|","º","ª"];
+	  	return str_replace($vowel,"", $str);
+}
 
+
+echo removeNoise('h%e&·%$·llo w&%or&l·$%d');
 
 
 
