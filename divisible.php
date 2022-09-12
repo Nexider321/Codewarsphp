@@ -1,4 +1,9 @@
 <?php
+# могут ли поделить переменную н / на х и у  
+# Надо сделать условие если 3 при делении на переменные остаеться в целом инт значении то ретурт труе 
+# а если получаеться флоат то тогда фалсе
+
+
 
 /*
 Create a function isDivisible(n,x,y) that checks if a number n is divisible by two numbers x AND y
