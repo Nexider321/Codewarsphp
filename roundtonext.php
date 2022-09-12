@@ -24,10 +24,16 @@ function roundtofive($n) {
 	{
 	return $n;
 	}
+	else{
+		$n = $n + (5-$n%5);
+return $n;
+	}
 
 }
 
-echo roundtofive(5);
+echo roundtofive(0);
 
+echo roundtofive(2);
+echo roundtofive(22);
 ?>
 
