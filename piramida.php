@@ -6,6 +6,7 @@
 # добавляем к строке переменную цикла в строковом типе
 # дальше добавляем \n что бы разделить строку
 # и надо найти функцию которой можно будет разделить
+#  slice | .= | explode 
 /*
 You have to write a function pattern which returns the following Pattern(See Pattern & Examples) upto n number of rows.
 Note:Returning the pattern is not the same as Printing the pattern.
