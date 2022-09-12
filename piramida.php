@@ -44,5 +44,29 @@ pattern(11):
 Hint: Use \n in string to jump to next line
 */
 
+function pattern($n) {
+	$str2 = "";
+	$str = "";
+if($n <= 1) {
+return $str;
+} else {
+for ($j = $n; $j >= 0; $j-- ) {
+	for ($i = 0; $i <= $j; $i++) { 
+		$y = $n - $i;
 
+		$str .= $y;
+		}
+	
+
+
+	$str .= "\n";
+}
+}
+return $str; 
+
+
+}
+
+
+echo pattern(4);
 ?>
