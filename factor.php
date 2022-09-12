@@ -18,9 +18,17 @@ For example 2 is not a factor of 7 because:
 */
 
 
-function isFactor()
+function isFactor($n, $i)
+{
+ if($n % $i === 0)
+ {
+	 return "true";
+ } else {
+ return "false";
+ }
 
-
+}
+echo isFactor(8, 2);
 
 
 
