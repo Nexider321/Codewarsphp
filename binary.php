@@ -8,8 +8,11 @@ The binary number returned should be a string!
  */
 
 
-function binary($n){
-
+function binary($n, $b){
+ $y = $n + $b;
+ return decbin($y);
 
 }
+
+echo binary(256, 124);
 ?>
