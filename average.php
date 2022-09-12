@@ -11,32 +11,23 @@ Ex: If input is [70, 70, 70, 70, 70] the program should return 70 (for obvious r
 */
 function avg($array){
 	foreach ($array as $arrays){
-	
-if (is_string($arrays)==true){
-	
+if (is_string($arrays)==true){	
 	return "incorrect";
 	}
-
-}
-	
-	
-	$sum = 0;
-	for ($i=0; $i < count($array); $i++){
-		$sum  = $sum + $array[$i];
 }
 
+$sum = 0;
+ for ($i=0; $i < count($array); $i++){
+	$sum  = $sum + $array[$i];
+}
 
 $avg = $sum / count($array);
 return $avg;
+
 }
 
 
 
 	
-echo avg
-	
-	(
-	$array = [90,40,30,90]
-
-	);
+echo avg($array = [90,40,30,90]);
 ?>
