@@ -18,9 +18,16 @@ Input may be any positive or negative integer (including 0).
 You can assume that all inputs are valid integers.
 */
 
+function roundtofive($n) {
 
+	if($n%5===0)
+	{
+	return $n;
+	}
 
+}
 
+echo roundtofive(5);
 
 ?>
 
