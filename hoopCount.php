@@ -3,10 +3,9 @@
 #
 # Если алекс не получит 10 и меньше, вернуть строку ...
 
-$a = 20;
 
 function hoop($a) {
-	if $a => 10 {
+	if ($a >= 10) {
 		return "Great";
 	}
 	else{
@@ -15,6 +14,6 @@ function hoop($a) {
 	
 
 }
-
+echo hoop(22);
 
 ?>
