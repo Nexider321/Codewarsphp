@@ -50,11 +50,10 @@ function pattern($n) {
 if($n <= 1) {
 return $str;
 } else {
-for ($j = $n; $j >= 0; $j-- ) {
-	for ($i = 0; $i <= $j; $i++) { 
-		$y = $n - $i;
+for ($j = $n; $j > 0; $j--) {
+	for ($i = $n; $i > ($n-$j); $i--) { 
 
-		$str .= $y;
+		$str .= $i;
 		}
 	
 
