@@ -1,3 +1,0 @@
-# Codewarsphp
-# Codewarsphp
-# Codewarsphp
