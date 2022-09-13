@@ -11,8 +11,6 @@ function hoop($a) {
 	else{
 	return "bad";
 	}
-	
-
 }
 echo hoop(22);
 

@@ -13,15 +13,12 @@ Implement a method that accepts 3 integer values a, b, c. The method should retu
 */
 
 
-function triangle($a,$b,$c) {
-		if ($a+$b<=$c || $a+$c<=$b || $b+$c<=$a) {
+function triangle($a, $b, $c)
+{
+	if ($a + $b <= $c || $a + $c <= $b || $b + $c <= $a) {
 		return "false";
 	} else {
-	return "true";
+		return "true";
+	}
 }
-
-}
-echo triangle(20,20,20);
-
-
-?>
+echo triangle(20, 20, 20);

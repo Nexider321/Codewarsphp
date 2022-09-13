@@ -45,28 +45,23 @@ pattern(11):
 Hint: Use \n in string to jump to next line
 */
 
-function pattern($n) {
+function pattern($n)
+{
 	$str2 = "";
 	$str = "";
-if($n <= 1) {
-return $str;
-} else {
-for ($j = $n; $j > 0; $j--) {
-	for ($i = $n; $i > ($n-$j); $i--) { 
+	if ($n <= 1) {
+		return $str;
+	} else {
+		for ($j = $n; $j > 0; $j--) {
+			for ($i = $n; $i > ($n - $j); $i--) {
 
-		$str .= $i;
+				$str .= $i;
+			}
+			$str .= "\n";
 		}
-	
-
-
-	$str .= "\n";
-}
-}
-return $str; 
-
-
+	}
+	return $str;
 }
 
 
 echo pattern(4);
-?>
