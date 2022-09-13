@@ -13,16 +13,18 @@ calculateHypotenuse(-2,1); // throws error
 calculateHypotenuse("one", "two"); // throws error
 For more information on the hypotenuse, visit: http://en.wikipedia.org/wiki/Hypotenuse
 */
-function calculateHypotenuse($a, $b){
+function calculateHypotenuse( $a, $b){
 	if ($a < 0 || $b < 0){
 	return "Error";	
-	} else {
-
+	} elseif(is_int($a) || is_int($b)){
  	$c = sqrt($a*$a+$b*$b);
-	return $c;
+	return round($c, 3);
+	} 
+       	else {
+	return "error";
 	}
 }
-echo calculateHypotenuse(3,4);
+echo calculateHypotenuse(2,4);
 
 
 ?>
