@@ -17,7 +17,9 @@ Assume: 0 <= n < 1000000000
 35235235  ->  "35,235,235"
 */
 
+function number($a){
+return number_format($a, 0, "", ",");
+}
 
-
-
+echo number(35235235);
 ?>
