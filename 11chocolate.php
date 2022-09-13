@@ -14,9 +14,8 @@ function chocolatebreak($n,$m){
 	return "Не достаточно плитки шоколада";
 	} else {
 	return	$n * $m - 1;
-		
 	}
-	}
+}
 
 
 
