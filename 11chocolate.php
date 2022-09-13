@@ -1,8 +1,7 @@
 <?php
 # Надо сделать проверку на негативное число
-# если верно то вернуть что не хватает шоколада для разделение
-# Дальше не обходимо сделать н до 1 и сколько и сделать счётчик сколько нам понадобиться движений что бы сломать
-
+# если верно то вернуть что не хватает плиток шоколада на разделение
+#  если плиток хватает то просто вернуть умножение плитку на плитку и - 1 
 
 /*
 Your task is to split the chocolate bar of given dimension n x m into small squares. Each square is of size 1x1 and unbreakable. Implement a function that will return minimum number of breaks needed.
