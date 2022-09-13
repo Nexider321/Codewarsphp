@@ -18,14 +18,17 @@ Try to optimize your function.
 function volume($m) {
 	$y = 0;
 	$i = 1;
-	for ($y < $m;  ) {
-	$y = $y + $i^3;
-	$i++
+	while ($y < $m) {
+	$y = $y + $i*$i*$i;
+	$i++;	
 	}
-	return $i;
-
+ if ($y === $m) {
+    return ($i-1);
+  } else {
+    return -1;
+  }
 }
 
 
-echo volume(40024);
+echo volume(1071225);
 ?>
