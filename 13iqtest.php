@@ -23,7 +23,7 @@ function iqtest($array){
 	 return $i+1;
 	 }
 	}
-}
+  }
 }
 echo iqtest("2 4 7 8 10");
 ?>
