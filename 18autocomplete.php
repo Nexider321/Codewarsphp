@@ -2,9 +2,12 @@
 # Функция принимает  текст который надо найти и словарь слов (Массив)
 #  надо сделать Регулярное выражение которые убирает цифры и символы и оставляет только текст
 # создаём пустой массив что бы было что вернуть
-# дальше делаем цикл и проверяем каждое слово в словаре на первые буквы совпадение в зависимосте какая длинна у инпута
+# дальше делаем цикл и сверяем каждую букву с помощью функции strcasecmp(наш инпут, первые буквы инпута) 
+#  проверяем только на длинну нашего инпута substr()
+# 
 # Если есть совпадение типов то пушим в наш массив эти слова
-# и если в массиве меньше 5 слов а если больше то не пушим и возращаем пустой массив
+# и если в массиве больше 5 слов то режим его с помощью array_slice до 5 слов
+# если же у нас не нашло совпадения то просто возращаем пустой массив
 #
 
 /*
@@ -18,7 +21,9 @@ Important note:
 Any input that is NOT a letter should be treated as if it is not there. For example, an input of "$%^" should be treated as "" and an input of "ab*&1cd" should be treated as "abcd".
 */
 
+ $filter = "/[^a-zA-Z-]/";
 
+ $array = ['airplane', 'airport','apple','ball', 'Fox', 'Mox', 'Brunirupucis', 'Afox', 'ATrex','Acall','Agenskalns','Agent'];
 function autocomplete($input,$dict,$filter){
 	$input_edit = preg_replace($filter,"",$input);	
 	$lenght = strlen($input_edit);
@@ -28,30 +33,55 @@ function autocomplete($input,$dict,$filter){
 			array_push($output,$dict[$i]);
 		}
 	}
-	return $output;	
+	return array_slice($output, 0, 5);	
 }
-
 print_r (autocomplete("3a3", $array, $filter));
 
 
+
+
+
+# Тут я попробовал первый раз классы
+
 class AutoComplete {
 
-public $filter = "/[^a-zA-Z-]/";
-public $dict = ['airplane', 'airport','apple','ball', 'Fox', 'Mox', 'Brunirupucis', 'Afox', 'ATrex','Acall','Agenskalns','Agent'];
+public static $filter = "/[^a-zA-Z-]/";
+public static $dict = ['airplane', 'airport','apple','ball', 'Fox', 'Mox', 'Brunirupucis', 'Afox', 'ATrex','Acall','Agenskalns','Agent'];
+public $input;
+public static $output = [];
 
-public function __construct($input, $filter) {
-	$this->input = preg_replace($filter, "", $input);
+public function __construct($input) {
+	$this->input = $input;
 }
 
-public function Sayfilteredtext(){
-return $this->input;
+public function filteredText(){
+	return preg_replace(self::$filter,"",$this->input);
+}
+
+public function autoWord(){
+	return 'This word is ' . print_r($this->wordFinder()); 
+}
+
+public function strLen(){
+	return strlen($this->filteredText());
+}
+
+public function wordFinder(){
+	for ($i = 0; $i < count(self::$dict); $i++){
+		if (strcasecmp($this->filteredText(),substr(self::$dict[$i],0, $this->strLen())) == 0){
+		 array_push(self::$output,self::$dict[$i]);
+		}
+	}
+  return self::$output;
 }
 
 }
 
-$Firstsearch = new AutoComplete("22a22");
+$Firstsearch = new AutoComplete("22air22");
 
-echo $Firstsearch->
+# echo $Firstsearch->autoWord();
+
+
 
 
 
