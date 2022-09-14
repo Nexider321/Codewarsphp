@@ -15,6 +15,6 @@ function letterChange($word) {
 	return chr($changedWord + 1);
 }
 
-letterChange('a');
+echo letterChange('a');
 
 ?>
