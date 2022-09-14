@@ -2,7 +2,7 @@
 # Функция принимает  текст который надо найти и словарь слов (Массив)
 #  надо сделать Регулярное выражение которые убирает цифры и символы и оставляет только текст
 # создаём пустой массив что бы было что вернуть
-# дальше делаем цикл и проверяем каждое слово в словаре
+# дальше делаем цикл и проверяем каждое слово в словаре на первые буквы совпадение в зависимосте какая длинна у инпута
 # Если есть совпадение типов то пушим в наш массив эти слова
 # и если в массиве меньше 5 слов а если больше то не пушим и возращаем пустой массив
 #
@@ -19,7 +19,40 @@ Any input that is NOT a letter should be treated as if it is not there. For exam
 */
 
 
-function autocomplete()
+function autocomplete($input,$dict,$filter){
+	$input_edit = preg_replace($filter,"",$input);	
+	$lenght = strlen($input_edit);
+	$output = [];
+	for ($i = 0; $i<count($dict); $i++){
+		if(strcasecmp($input_edit,substr($dict[$i], 0, $lenght)) == 0){
+			array_push($output,$dict[$i]);
+		}
+	}
+	return $output;	
+}
+
+print_r (autocomplete("3a3", $array, $filter));
+
+
+class AutoComplete {
+
+public $filter = "/[^a-zA-Z-]/";
+public $dict = ['airplane', 'airport','apple','ball', 'Fox', 'Mox', 'Brunirupucis', 'Afox', 'ATrex','Acall','Agenskalns','Agent'];
+
+public function __construct($input, $filter) {
+	$this->input = preg_replace($filter, "", $input);
+}
+
+public function Sayfilteredtext(){
+return $this->input;
+}
+
+}
+
+$Firstsearch = new AutoComplete("22a22");
+
+echo $Firstsearch->
+
 
 
 
