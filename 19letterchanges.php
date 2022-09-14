@@ -11,10 +11,45 @@ letterChange('Lorem Ipsum')    // return Mpsfn Jqtvn
 */
 
 function letterChange($word) {
+	$string = "";
 	$changedWord = ord($word);
-	return chr($changedWord + 1);
+	for ($i = 0; $i < 20; $i++) {
+		$string .= chr($changedWord + $i );
+		
+	}
+return $string;
 }
 
-echo letterChange('a');
+	
+	
+function bestSolution($word) {
+  $alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	$newWord = "";
+  for ($i = 0; $i < strlen($word); $i++) {
+	  switch(substr($i, $i+1)){
+	  case ' ': 
+		 $newWord .= ' ';
+		  break;
+	  case 'Z':
+		  $newWord .= 'Z';
+		  break;
+	  case 'z':
+		 $newWord .= 'z';
+		 break;
+		  default:
+		 for($j = 0; $j < strlen($alphabet); $j++){
+			 if (substr($alphabet,$j,$j+1) == substr($word, $i,$i+1)){
+				 $newWord .= substr($alphabet, $j+1,$j+2);
+		 }
+	  
+	  }
+
+  }
+}
+
+return $newWord;
+}
+echo bestSolution("zasdldalkf Lorem IpsumZZ");
+# echo letterChange('Lorem Ipsum');
 
 ?>
