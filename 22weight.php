@@ -1,8 +1,8 @@
 <?php
 # Функция принимает инт
-# суммирует каждое число по отдельности 5+6 
-# сделать сортировку от саммого маленького числа до большого
-# вернуть отсортированную строку
+# суммируем каждое число по отдельности 5+6 
+# в сортируем от маленького числа до большого
+# ключи которые от сортировали присваеваем к старому массиву и возращаем получившеюся строку 
 
 /*
 My friend John and I are members of the "Fat to Fit Club (FFC)". John is worried because each month a list with the weights of members is published and each month he is the last on the list which means he is the heaviest.
@@ -14,5 +14,35 @@ When two numbers have the same "weight", let us class them as if they were strin
 All numbers in the list are positive numbers and the list can be empty.
 */
 
+function sortDigits($digits){
+	$weights = "";
+	$explodes = explode(" ", $digits);
+	
+	for ($i = 0; $i < count($explodes); $i++){
+           $temp = str_split($explodes[$i]);
+           $weights .= array_sum($temp) . " ";
+	}
+
+	$keys = sortWeights($weights); 
+	return filter($keys, $explodes);
+}
+
+function filter($keys,$explodes){
+	$weightList = "";
+	foreach ($keys as $key) {
+	$weightList .= $explodes[$key] . " ";	
+	}
+	return $weightList . "\n";
+}
+
+function sortWeights($weights){
+	$sort = explode(" ", $weights);
+	natcasesort($sort);
+	$keys = array_keys($sort);
+	unset($keys[0]);
+	return $keys;
+}
+
+echo sortDigits("25 35 45 65 100 190");
 
 ?>
