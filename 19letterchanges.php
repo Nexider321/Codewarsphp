@@ -8,48 +8,56 @@ Welcome to this Kata. In this Kata you will be given a string. Your task is to r
 The test cases would not have any special symbols or numbers but it will have spaces. And the upper and lower cases should be retained in your output.
 For Example:
 letterChange('Lorem Ipsum')    // return Mpsfn Jqtvn
-*/
+ */
 
-function letterChange($word) {
-	$string = "";
-	$changedWord = ord($word);
-	for ($i = 0; $i < 20; $i++) {
-		$string .= chr($changedWord + $i );
-		
-	}
-return $string;
-}
+# Первая версия 
 
-	
-	
-function bestSolution($word) {
-  $alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+function letterChange($word)
+{
+	$splitWord = str_split($word);
 	$newWord = "";
-  for ($i = 0; $i < strlen($word); $i++) {
-	  switch(substr($i, $i+1)){
-	  case ' ': 
-		 $newWord .= ' ';
-		  break;
-	  case 'Z':
-		  $newWord .= 'Z';
-		  break;
-	  case 'z':
-		 $newWord .= 'z';
-		 break;
-		  default:
-		 for($j = 0; $j < strlen($alphabet); $j++){
-			 if (substr($alphabet,$j,$j+1) == substr($word, $i,$i+1)){
-				 $newWord .= substr($alphabet, $j+1,$j+2);
-		 }
-	  
-	  }
-
+	for ($i = 0; $i < strlen($word); $i++) { 
+	if($splitWord[$i] == ' ') {
+	$newWord .= ' ';
+	} elseif($splitWord[$i] == 'a') {
+	$newWord .= 'z';
+	} elseif($splitWord[$i] == 'A') {
+	$newWord .= 'Z';
+	} else {
+	$newWord .= chr(ord($splitWord[$i]) + 1);
+	}	
   }
+	return $newWord;
 }
 
-return $newWord;
-}
-echo bestSolution("zasdldalkf Lorem IpsumZZ");
-# echo letterChange('Lorem Ipsum');
 
-?>
+# echo letterChange("Lorem Ipsum a plus A");
+
+
+
+# Тут я сделал через свитчи
+
+function letterChangeSwitch($word)
+{
+	$splitWord = str_split($word);
+	$newWord = "";
+	for ($i = 0; $i < strlen($word); $i++) { 
+		switch($splitWord[$i]) {
+		case ' ':
+			$newWord .= ' ';
+			break;
+		case 'a':
+			$newWord .= 'z';
+			break;
+		case 'A':
+			$newWord .= 'Z';
+			break;
+		default:
+			$newWord .= chr(ord($splitWord[$i]) + 1);
+		}
+	}
+	return $newWord;
+}
+
+
+echo letterChangeSwitch("Lorem Ipsum a plus A");
