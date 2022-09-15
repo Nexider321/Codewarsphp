@@ -43,6 +43,6 @@ function sortWeights($weights){
 	return $keys;
 }
 
-echo sortDigits("25 35 45 65 100 190");
+echo sortDigits("56 65 74 100 99 68 86 180 90");
 
 ?>
