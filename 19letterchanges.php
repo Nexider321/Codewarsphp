@@ -52,6 +52,12 @@ function letterChangeSwitch($word)
 		case 'A':
 			$newWord .= 'Z';
 			break;
+		case 'Z':
+			$newWord .= 'A';
+			break;
+		case 'z':
+			$newWord .= 'a';
+			break;
 		default:
 			$newWord .= chr(ord($splitWord[$i]) + 1);
 		}
@@ -60,4 +66,4 @@ function letterChangeSwitch($word)
 }
 
 
-echo letterChangeSwitch("Lorem Ipsum a plus A");
+echo letterChangeSwitch("Lorem Ipsum a plus A and Z plus z");
