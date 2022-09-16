@@ -24,8 +24,61 @@ Given a two-dimensional array representation of a glass of mixed liquids, sort t
  ['H', 'H', 'O', 'O']         ['H','H','H','H']
  ]                           ]
 The glass representation may be larger or smaller. If a liquid doesn't fill a row, it floats to the top and to the left.
-*/
+ */
 
+function sortFunc(){
+	$mixedGlass = [
+	[
+		'H', 'H', 'W', 'O'
+	],
+	[
+		'W', 'W', 'O', 'W'
+	],
+	[
+		'H', 'H', 'O', 'O'
+	]
+];
 
+$O = [];
+$A = [];
+$W = [];
+$H = [];
 
+foreach ($mixedGlass as $mixed) {
+
+	$exploded = implode(",", $mixed);
+	$ixploded = explode(",", $exploded);
+
+	foreach ($ixploded as $ploded) {
+ 	for ($i = 0; $i < strlen($ploded); $i++){
+		switch ($ploded[$i]) {
+		case 'H':
+			array_push($H, $ploded[$i]);
+			break;
+		case 'O':
+			array_push($O, $ploded[$i]);
+			break;
+		case 'A':
+			array_push($A, $ploded[$i]);
+			break;
+		case 'W':
+			array_push($W, $ploded[$i]);
+			break;
+		 default:
+			echo "not";
+			break;
+		}
+	}
+    }
+
+}
+	var_dump($O);
+	var_dump($A);
+	var_dump($H);
+	var_dump($W);
+  
+
+}
+
+sortFunc();
 ?>
