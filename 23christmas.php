@@ -31,6 +31,55 @@ var presents = [
 guessGifts(wishlist, presents); // must return ["Toy Car", "Mini Puzzle"]
 */
 
+function christmasPresents(){
 
+$wishList = [
+	[
+		"name:" => "Mini Puzzle",
+		"size:" => "small",
+		"clatters:" => "yes",
+		"weight:" => "light",
+	],
+	[
+		"name:" => "Toy Car",
+		"size:" => "medium",
+		"clatters:" => "a bit",
+		"weight:" => "medium",
+	],
+	[
+		"name:" => "Card Game",
+		"size:" => "small",
+		"clatters:" => "no",
+		"weight:" => "light"
+	],
+];
+$presents = [
+	[
+		"size:" => "medium",
+		"clatters:" => "a bit",
+		"weight:" => "medium"
+	],
+	[
+		"size:" => "small",
+	   "clatters:" => "yes",
+	   "weight:" => "light"
+	]
+];	
+$list = [];
+  foreach ($wishList as $wish){
+	foreach($presents as $present){
+		
+		if(
+		$present["size:"] == $wish['size:'] &&	
+		$present['clatters:'] == $wish['clatters:'] &&
+		$present['weight:'] == $wish ['weight:']
+		) {
+		array_push($list, $wish['name:']);
+		}
+   	}
+   }
+print_r($list);
+}
 
+christmasPresents();
 ?>
