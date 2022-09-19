@@ -1,6 +1,6 @@
 <?php
 
-# Создать регулярное выражение которые будет выбирать только правильные даты
+# Создать регулярное выражение которые будут искать только правильные даты
 /*
 Your task is to write a regular expression (regex) that will match a string only if it contains at least one valid date, in the format [mm-dd] (that is, a two-digit month, followed by a dash, followed by a two-digit date, surrounded by square brackets).
 You should assume the year in question is not a leap year. Therefore, the number of days each month should have are as follows:
@@ -26,7 +26,7 @@ For example:
 "[3] [12-04] [09-tenth]" // December 4th is a valid date
 */
 $str = "[02-23][01-21][04-31][03-29]";
-$regexp = "/((01|03|05|07|08|10|12)-(0[1-9]|[1-2][0-9]|3[0-1]))|((04|06|09|11)-(0[1-9]|[1-2][0-9]|30))|(02-(0[1-9]|[1-2][0-8]))/";
-echo preg_match_all($regexp, $str);
+$regexp = "/(((01|03|05|07|08|10|12)-(0[1-9]|[1-2][0-9]|3[0-1]))|((04|06|09|11)-(0[1-9]|[1-2][0-9]|30))|(02-(0[1-9]|[1-2][0-8])))/";
+echo preg_match_all($regexp, $str); // 3 даты правильных 
 
 ?>
