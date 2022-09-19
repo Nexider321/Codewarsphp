@@ -16,6 +16,13 @@ Example(Input --> Output)
 Note: In COBOL, it should return "found the needle at position 6"
  */
 
-
+function findNeedle($haystack) {
+    // your code here
+    for($i = 0; $i < count($haystack); $i++) {
+      if ($haystack[$i] === "needle") {
+        return "found the needle at position $i";      
+    }
+  }
+}
 
 ?>
