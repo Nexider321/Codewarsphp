@@ -17,6 +17,23 @@ Numerical Score 	Letter Grade
 
 Tested values are all between 0 and 100. Theres is no need to check for negative values or values greater than 100.
  */
-
-
+function getGrade($a, $b, $c) {
+    $sum = $a + $b + $c;
+    $notroundedavg = $sum / 3;
+    $avg = round($notroundedavg);
+    
+    if ($avg >= 90 ){
+      return "A";
+    } elseif($avg >= 80 ){
+      return "B";
+    } elseif($avg >= 70 ) {
+      return "C";
+    } elseif($avg >= 60 ) {
+      return "D";
+    } else {
+      return "F";
+    }
+  
+}
+echo getGrade(90, 93, 96);
 ?>
