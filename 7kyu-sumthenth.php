@@ -24,6 +24,26 @@ Examples:(Input --> Output)
 
  */
 
+function series_sum($n) {
+  // Your code here
+  $str2 = "";
+  $y = 4;
+  $s = 1;
+  for ($i = 0; $i < $n; $i++) {
+	  if ($i === 0) {
+		  $str = "1.00";
+	  } else { 
+	$tmp = 1/$y;	  
+	$str += $tmp;
+	  $y += 3;
+	  } 
+  }
+    if ($str != '1.00') {
+  return $str2 .= round($str,2);
+    }
+  return $str;
+}
 
+echo series_sum(45);
 
 ?>
