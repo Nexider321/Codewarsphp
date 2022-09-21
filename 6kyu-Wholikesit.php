@@ -15,6 +15,25 @@ Implement the function which takes an array containing the names of people that 
 
 Note: For 4 or more names, the number in "and 2 others" simply increases*/
 
+function likes( $names ) {
+	$count = count($names);
+	if ($count == 0){	
+      return "no one likes this";
+	}
+    elseif ($count <= 1){
+      return  $names[0] .  " likes this" ;
+    } elseif ($count <= 2) {
+    	return $names[0] . " and " . $names[1] . " like this";
+    }	elseif ($count <= 3) {
+    	return $names[0] . ", " . $names[1] . " and " . $names[2] ." like this";
+    }
+      else {
+           $counts = $count - 2;
+	   array_splice($names, 2);
+	   return $names[0] . ", " . $names[1] . " and " . $counts . " others like this";
+    }
+    // Your code here...
+}
 
-
+echo likes([]);
 ?>
